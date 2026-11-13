@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router";
-import HomePage from "./pages/HomePage.jsx";
-import PostPage from "./pages/PostPage.jsx";
+import HomePage from "../pages/HomePage.jsx";
+import PostPage from "../pages/PostPage.jsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <HomePage /> },

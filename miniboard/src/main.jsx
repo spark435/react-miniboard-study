@@ -4,7 +4,7 @@ import './index.css'
 
 // src/main.jsx에 추가
 import { RouterProvider } from "react-router/dom";
-import router from "./router.jsx";
+import router from './router/router.jsx';
 
 
 createRoot(document.getElementById('root')).render(
