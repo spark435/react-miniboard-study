@@ -1,14 +1,13 @@
 import { Link, Outlet } from "react-router";
 
-function App() {
+function Header() {
   return (
     <>
       <header>
-        <div>Miniboard</div>
+        <h1>Miniboard</h1>
       </header>
-      <Outlet />
     </>
   );
 }
 
-export default App;
+export default Header;

@@ -4,8 +4,18 @@ import './index.css'
 
 // add router
 import { RouterProvider } from "react-router/dom";
-import router from './router/router.jsx';
+import {createBrowserRouter} from "react-router-dom";
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      { index: true, element: <HomePage /> },
+      { index: true, element: <PostPage /> },
+    ],
+  },
+]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
