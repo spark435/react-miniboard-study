@@ -2,7 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 
-// src/main.jsx에 추가
+// add router
 import { RouterProvider } from "react-router/dom";
 import router from './router/router.jsx';
 

@@ -1,3 +1,3 @@
 export const API_BASE_URL = (
-  import.meta.env.VITE_API_BASE_URL || "https://www.mydummyapi.com/"
+  import.meta.env.VITE_API_BASE_URL || "https://dummyjson.com/"
 ).replace(/\/$/, "");
