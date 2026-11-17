@@ -10,3 +10,15 @@ export async function fetchPosts() {
     return data.posts;
 
 }
+
+export async function fetchPostId(id){
+    const response = await fetch(`${API_BASE_URL}/posts/${id}`);
+    if (response.status === 404) {
+        return null;
+    }
+    if (!response.ok) {
+        throw new Error("Failed to fetch post");
+    };
+
+    return response.json();
+}
