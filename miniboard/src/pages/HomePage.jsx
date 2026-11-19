@@ -27,7 +27,7 @@ function HomePage() {
   return (
     <>
       <section>
-        <PostList isLoading={loading} isError={error} posts={posts} />
+        <PostList loading={loading} error={error} posts={posts} />
       </section>
 
     </>
@@ -36,15 +36,15 @@ function HomePage() {
 
 function PostList({loading, error, posts}){
   if (loading){
-    return <p>Posts are loading...</p>
+    return <p className="content-loading">Posts are loading...</p>
   }
 
   if(error){
-    return <p>Failed to load posts. Try again later.</p>
+    return <p className="content-loading">Failed to load posts. Try again later.</p>
   }
 
   if(posts.length == 0){
-    return <p>No posts available.</p>
+    return <p className="content-loading">No posts available.</p>
   }
 
   return(

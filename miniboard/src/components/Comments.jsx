@@ -26,8 +26,8 @@ function Comments({ postId }) {
     return (
         <>
           <section>
-            <h1>Comments</h1>
-            <CommentList isLoading={loading} isError={error} comments={comments} />
+            <h1 className="comment-title">Comments</h1>
+            <CommentList loading={loading} error={error} comments={comments} />
           </section>
         
         </>
@@ -38,23 +38,23 @@ function Comments({ postId }) {
 
 function CommentList({loading, error, comments}){
   if (loading){
-    return <p>Comments are loading...</p>;
+    return <p className="content-loading">Comments are loading...</p>;
   }
 
   if(error){
-    return <p>Failed to load comments. Try again later.</p>;
+    return <p className="content-loading">Failed to load comments. Try again later.</p>;
   }
 
   if(comments.length == 0){
-    return <p>No comments available.</p>;
+    return <p className="content-loading">No comments available.</p>;
   }
 
   return(
     <ul>
       {comments.map((comment) => (
-        <li key={(comment.id)} className="comments">
-            <p className="comment-body">{comment.body}</p>
+        <li key={(comment.id)} className="comment">
             <p className="comment-author">{comment.user.username}</p>
+            <p className="comment-body">{comment.body}</p>
         </li>
       ))}
     </ul>

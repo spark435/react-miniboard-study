@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchPostId } from "../api/posts.js";
 import Comments from "../components/Comments.jsx";
-import { Link, useParams } from "react-router";
+import { useParams } from "react-router";
 
 function PostPage() {
     const { id } = useParams();
@@ -37,19 +37,24 @@ function PostPage() {
 
 function PostContent({ loading, error, post }) {
     if (loading) {
-        return <p>Post is loading...</p>;
+        return <p className="content-loading">Post is loading...</p>;
     }
     if (error) {
-        return <p>Failed to load post. Try again later.</p>;
+        return <p className="content-loading">Failed to load post. Try again later.</p>;
     }
     if (!post) {
-        return <p>Post not found.</p>;
+        return <p className="content-loading">Post not found.</p>;
     }
 
     return (
         <>
-            <p className="blog-body">{post.body}</p>
-            <Comments key={post.id} postId={post.id} />
+            <article className="post-content">
+                <h1 className="blog-title">{post.title}</h1>
+                <p className="blog-body">{post.body}</p>
+            </article>
+            <div className="post-comments">
+                <Comments key={post.id} postId={post.id} />
+            </div>
         </>
     );
 }
