@@ -50,7 +50,7 @@ function PostContent({ loading, error, post }) {
         <>
             <article className="post-content">
                 <h1 className="blog-title">{post.title}</h1>
-                <p className="blog-body">{post.body}</p>
+                <p>{post.body}</p>
             </article>
             <div className="post-comments">
                 <Comments key={post.id} postId={post.id} />
